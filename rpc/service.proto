@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package twirp.paperclips;
+option go_package = "rpc";
+
+// UniversalPaperclips service creates paperclips and calculates existential dread.
+service UniversalPaperclips {
+  rpc GetPaperclips(Empty) returns (Paperclips);
+  rpc IncrementPaperclips(Size) returns (Empty);
+  rpc CalculateUniverseLifespan(Empty) returns (Dread);
+}
+
+message Size {
+  int32 paperclips = 1; // must be > 0
+}
+
+message Paperclips {
+  int32 paperclips = 1;
+}
+
+message Dread {
+  int32 paperclips = 1;
+  string universeLifespan = 2;
+}
+
+message Empty {}
